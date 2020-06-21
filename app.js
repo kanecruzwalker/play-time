@@ -41,10 +41,21 @@ app.post("/", function (req, res){
         if (err){
             console.log("Error");
         }else{
-            res.redirect("/");
+            res.redirect("/profile");
         }
     });
 });
+
+app.get("/profile", function (req, res){
+    User.find({}, function(err, users){
+        console.log(users);
+        console.log(users[16].username);
+    });
+    
+    res.render("profile");
+});
+
+
 
 let port = process.env.PORT;
 if(port == null || port == ""){
