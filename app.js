@@ -64,5 +64,5 @@ if(port == null || port == ""){
 
 
 app.listen(port, function(){
-    console.log("Server started and connected");
+    console.log(`Server started and connected to ${port} `);
 });
